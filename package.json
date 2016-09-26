@@ -1,0 +1,30 @@
+{
+  "name": "frogjump",
+  "description": "Gaming web app. ",
+  "authors": [
+    "Sreevidya"
+  ],
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "node-router": "*",
+    "cheerio": "0.22.0"
+  },
+  "devDependencies": {
+    "node-router": "*",
+    "cheerio": "0.22.0"
+  },
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sreevidyaJ/FrogJump.git"
+  },
+  "author": "sreevidya",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sreevidyaJ/FrogJump/issues"
+  },
+  "homepage": "https://github.com/sreevidyaJ/FrogJump#readme"
+}
