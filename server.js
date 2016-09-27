@@ -54,6 +54,7 @@ http.createServer( function(req, res) {
 						if(POST.start == "start"){
 							$ = cheerio.load(html.toString());
 							min = 0, sec = 0, hour = 0;
+							$('#stopbtn').css('display', 'none');
 							$('#frogJump button').removeAttr('disabled');
 							$('p').css('display','none');
 							$('#startbtn').attr('disabled', 'true');
@@ -61,6 +62,7 @@ http.createServer( function(req, res) {
 							res.end($.html());
 						}else if(POST.reset == "reset"){
 							$ = cheerio.load(html.toString());
+							$('#stopbtn').css('display', 'none');
 							res.end($.html());
 						}else{
 							timeWindow.html(add());
@@ -126,6 +128,11 @@ function css(request, response) {
 function getFile(localPath, res, mimeType) {
 	fs.readFile(localPath, function(err, contents) {
 		if(!err) {
+			if(mimeType == ".html"){
+				$ = cheerio.load(contents.toString());
+				$('#stopbtn').css('display', 'none');
+				contents = $.html();
+			}
 			res.setHeader("Content-Length", contents.length);
 			res.setHeader("Content-Type", mimeType);
 			res.setHeader("encoding", 'utf8');
