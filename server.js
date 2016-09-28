@@ -1,4 +1,4 @@
-var port = 8000;
+var port = process.env.PORT || 8000;
 var serverUrl = "127.0.0.1";
 
 var http = require("http");
